@@ -13,6 +13,7 @@
 
     "_provide_setuppy_fallback": "n",
     "_sphinx_theme": "nature",
+    "_install_requires": "numpy",
     "_copy_without_render": [
         "docs/_templates",
         "docs/_static"
