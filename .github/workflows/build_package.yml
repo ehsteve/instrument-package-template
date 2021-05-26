@@ -31,7 +31,7 @@ jobs:
     - name: Install Generated Repo Dependencies
       run: |
         cd packagename
-        git init
+        git tag -a v1.0 -m "fake version 1.0"
         pip install -e .[all]
     - name: Run package tox Tests
       run: |
