@@ -1,0 +1,40 @@
+name: Build Example Package
+
+on: [push, pull request]
+  branches:
+    - main
+
+jobs:
+  build-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        persist-credentials: false
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install Dependencies
+      run: |
+        pip install cookiecutter
+        pip install --upgrade tox
+    - name: Generate Repo
+      run: |
+        cookiecutter . --no-input
+        rm -Rf packagename/.github/workflows/build_package.yml
+    - name: Install Generated Repo Dependencies
+      run: |
+        cd packagename
+        pip install -e .[all]
+    - name: Run tox Tests
+      run: |
+        tox
+    - name: Run Generated Repo Lint
+      run: |
+        cd packagename
+        tox -e codestyle
+    - name: Test Generate Docs
+      run: |
+        tox -e build_docs
