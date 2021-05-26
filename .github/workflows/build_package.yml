@@ -31,14 +31,15 @@ jobs:
     - name: Install Generated Repo Dependencies
       run: |
         cd packagename
+        git init
         pip install -e .[all]
-    - name: Run tox Tests
+    - name: Run package tox Tests
       run: |
         tox
-    - name: Run Generated Repo Lint
+    - name: Run package generated Repo Lint
       run: |
         cd packagename
         tox -e codestyle
-    - name: Test Generate Docs
+    - name: Run package generate Docs
       run: |
         tox -e build_docs
