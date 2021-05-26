@@ -32,6 +32,8 @@ jobs:
         git init
         git config user.name "GitHub Actions Bot"
         git config user.email "<>"
+        git add .
+        git commit -m "first commit"
         git tag -a v1.0 -m "fake version 1.0"
         pip install -e .[all]
     - name: Run package tox Tests
