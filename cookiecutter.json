@@ -7,9 +7,9 @@
     "license": ["BSD 3-Clause", "GNU GPL v3+", "Apache Software License 2.0", "BSD 2-Clause", "Other"],
     "project_url": "",
     "github_repo": "HERMES-SOC/{{ cookiecutter.package_name }}",
-    "minimum_python_version": ["3.8", "3.7", "3.6", "3.5"],
+    "minimum_python_version": ["3.8"],
     "use_compiled_extensions": "n",
-    "include_example_code": "n",
+    "include_example_code": "y",
 
     "_provide_setuppy_fallback": "n",
     "_sphinx_theme": "nature",
