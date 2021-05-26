@@ -39,7 +39,7 @@ jobs:
     - name: Run package tox Tests
       run: |
         cd packagename
-        tox
+        tox -e py38
     - name: Run package generated Repo Lint
       run: |
         cd packagename
@@ -48,3 +48,11 @@ jobs:
       run: |
         cd packagename
         tox -e build_docs
+    - name: Publish Repo
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BASE_BRANCH: main # The branch the action should deploy from.
+        BRANCH: 'example-build' # The branch the action should deploy to.
+        FOLDER: packagename/ # The folder the action should deploy
+        CLEAN: true
