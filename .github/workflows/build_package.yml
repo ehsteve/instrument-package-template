@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2.3.1
+    - uses: actions/checkout@v1
       with:
         persist-credentials: false
     - name: Set up Python
@@ -31,6 +31,7 @@ jobs:
     - name: Install Generated Repo Dependencies
       run: |
         cd packagename
+        git init
         git config user.name "GitHub Actions Bot"
         git config user.email "<>"
         git tag -a v1.0 -m "fake version 1.0"
