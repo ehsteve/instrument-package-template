@@ -1,0 +1,12 @@
+default_context:
+  package_name: packagename
+  module_name: packagename
+  short_description: Does useful things.
+  author_name: Jane Doe
+  author_email: a@b
+  license: BSD 3-Clause
+  project_url: http:google.com
+  github_repo: HERMES-SOC/packagename
+  minimum_python_version: 3.8
+  use_compiled_extensions: n
+  include_example_code: y
