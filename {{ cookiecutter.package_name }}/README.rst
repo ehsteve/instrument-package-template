@@ -50,5 +50,5 @@ our `Code of Conduct <https://github.com/HERMES-SOC/code-of-conduct/blob/main/CO
 
 Acknowledgements
 ----------------
-The package template used by this package is based on the one developed by the 
+The package template used by this package is based on the one developed by the
 `OpenAstronomy community <https://openastronomy.org>` and the `SunPy Project <https://sunpy.org/>`.
