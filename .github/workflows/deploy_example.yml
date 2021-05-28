@@ -1,10 +1,7 @@
-name: Build Example Package and run tests
+name: Deploy Example Package to branch
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
     branches:
       - main
 
@@ -27,7 +24,7 @@ jobs:
         cookiecutter . --no-input
         rm -Rf packagename/.github/workflows/build_package.yml
     - name: Install Generated Repo Dependencies
-      run: |
+      run: | # the git commands are required to get a version number which is required for pip install
         cd packagename
         git init
         git config user.name "GitHub Actions Bot"
@@ -36,15 +33,11 @@ jobs:
         git commit -m "first commit"
         git tag -a v1.0 -m "fake version 1.0"
         pip install -e .[all]
-    - name: Run package tox Tests
-      run: |
-        cd packagename
-        tox -e py38
-    - name: Run package generated Repo Lint
-      run: |
-        cd packagename
-        tox -e codestyle
-    - name: Run package generate Docs
-      run: |
-        cd packagename
-        tox -e build_docs
+    - name: Publish Repo
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BASE_BRANCH: main # The branch the action should deploy from.
+        BRANCH: 'example-build' # The branch the action should deploy to.
+        FOLDER: packagename/ # The folder the action should deploy
+        CLEAN: true
