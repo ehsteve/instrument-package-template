@@ -22,17 +22,6 @@ jobs:
     - name: Generate Repo
       run: |
         cookiecutter . --no-input
-        rm -Rf packagename/.github/workflows/build_package.yml
-    - name: Install Generated Repo Dependencies
-      run: | # the git commands are required to get a version number which is required for pip install
-        cd packagename
-        git init
-        git config user.name "GitHub Actions Bot"
-        git config user.email "<>"
-        git add .
-        git commit -m "first commit"
-        git tag -a v1.0 -m "fake version 1.0"
-        pip install -e .[all]
     - name: Publish Repo
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
