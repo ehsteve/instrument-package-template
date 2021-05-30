@@ -46,9 +46,9 @@ Note: This disclaimer was originally written by
 Code of Conduct
 ---------------
 When you are interacting with the HERMES-SOC community you are asked to follow
-our `Code of Conduct <https://github.com/HERMES-SOC/code-of-conduct/blob/main/CODE_OF_CONDUCT.md>`.
+our `Code of Conduct <https://github.com/HERMES-SOC/code-of-conduct/blob/main/CODE_OF_CONDUCT.md>`_.
 
 Acknowledgements
 ----------------
 The package template used by this package is based on the one developed by the
-`OpenAstronomy community <https://openastronomy.org>` and the `SunPy Project <https://sunpy.org/>`.
+`OpenAstronomy community <https://openastronomy.org>`_ and the `SunPy Project <https://sunpy.org/>`_.

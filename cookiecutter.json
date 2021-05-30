@@ -17,7 +17,8 @@
     "_parent_project": "",
     "_copy_without_render": [
         "docs/_templates",
-        "docs/_static"
+        "docs/_static",
+        ".github/workflows"
     ],
 
     "_parameters": {
