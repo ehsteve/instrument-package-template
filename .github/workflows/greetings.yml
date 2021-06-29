@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'Hello there, thanks for opening your first issue. We welcome you to the community! Please have a look at our community [code of conduct](https://github.com/HERMES-SOC/code-of-conduct/blob/main/CODE_OF_CONDUCT.md)'
+        pr-message: 'Hello there, thanks for opening your first Pull Request. Such work! So wow! Someone will review it soon. Please have a look at our community [code of conduct](https://github.com/HERMES-SOC/code-of-conduct/blob/main/CODE_OF_CONDUCT.md)'
